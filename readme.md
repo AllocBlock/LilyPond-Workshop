@@ -1,24 +1,29 @@
-VSLilyPond
-===============
+# lilypond-workshop README
 
-LilyPond syntax highlighting in VSCode.
+Provide LilyPond syntex highlighting and auto-compiling.
 
-### Description
+This project is based on [VSLilyPond](https://github.com/TrudyFirestone/VSLilyPond), which use the grammar from [SubLilyPond](https://github.com/yrammos/SubLilyPond).
 
-Based on [SubLilyPond](https://github.com/yrammos/SubLilyPond), this provides syntax highlighting for LilyPond in VSCode. It doesn't currently support embedded scheme code as SubLilyPond does.
+## Requirements
 
-2021.4.10 Add compiler config and compile on save. You may meanwhile use a pdf viewer plugin to "save and view".
+If you need to compile an LilyPond file (.ly, .ily) to pdf, you will need a compiler on [LilyPond Official Website](https://lilypond.org). Download and install it, you can find the compiler (In Windows, it's at 
+> C:/Program Files/LilyPond/usr/bin/lilypond.exe
 
-### Installing SubLilyPond
+on default).
 
-#### From VSCode
-Search for LilyPond in the extensions browser, and install the extension LilyPond by truefire.
+## Features
 
-#### From Source
-Use your favorite tool to convert `lilypond.json` from json to plist and save it in the `lilypond/syntaxes/` directory as `lilypond.tmLanguage`. Then copy the `lilypond` directory to the `.vscode/extensions` directory in your home directory.
+- Support LilyPond syntex highlighting.
+- Support compile and auto-compile.
+- **No support** for pdf viewing. So you may find a pdf viewer plugin for viewing.
 
-### Acknowledgements
+## Extension Commands and Settings
+- Commands
+  * `extension.lilypond-workshop.compile`(LilyPond Workshop: Compile): compile LilyPond file now
+- Settings
+  * `extension.lilypond-workshop.compilerPath`: path of LilyPond compiler (lilypond.exe)
+  * `extension.lilypond-workshop.compileOnSave`: enable auto-compile on save
 
-Grammar from [SubLilyPond](https://github.com/yrammos/SubLilyPond) by Yannis Rammos, copyright © 2013 under the Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0) license, <http://creativecommons.org/licenses/by-sa/3.0/>. See that repository for additional acknowledgements. 
+## Known Issues
 
-License: Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0) license, <http://creativecommons.org/licenses/by-sa/3.0/>.
+- Doesn't currently support embedded scheme

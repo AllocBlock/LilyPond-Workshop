@@ -1,11 +1,11 @@
 {
-    "name": "lilypond",
-    "displayName": "LilyPond",
-    "description": "Provides syntax highligting for the LilyPond language",
+    "name": "lilypond-workshop",
+    "displayName": "LilyPond Workshop",
+    "description": "Highlight and auto-compile for LilyPond file",
     "version": "0.0.1",
-    "publisher": "truefire",
+    "publisher": "AllocBlock",
     "engines": {
-        "vscode": "^1.14.0"
+        "vscode": "^1.55.0"
     },
     "categories": [
         "Programming Languages"
@@ -16,16 +16,16 @@
     "main": "./src/extension",
     "contributes": {
         "configuration": {
-            "id": "lilypond",
+            "id": "lilypond-workshop",
 			"type": "object",
-			"title": "LilyPond Settings",
+			"title": "LilyPond Workshop Settings",
 			"properties": {
-				"lilypond.compilerPath": {
+				"lilypond-workshop.compilerPath": {
 					"type": "string",
 					"default": "C:/Program Files/LilyPond/usr/bin/lilypond.exe",
 					"description": "Path of LilyPond compiler (lilypond.exe)"
 				},
-                "lilypond.compileOnSave": {
+                "lilypond-workshop.compileOnSave": {
 					"type": "boolean",
 					"default": true,
 					"description": "Enable auto-compile on save"
@@ -34,26 +34,20 @@
 		},
         "commands": [
             {
-                "command": "extension.lilypond.compile",
-                "title": "LilyPond: Compile"
+                "command": "extension.lilypond-workshop.compile",
+                "title": "LilyPond Workshop: Compile"
             }
         ],
         "languages": [{
             "id": "lilypond",
-            "aliases": [
-                "LilyPond",
-                "lilypond"
-            ],
-            "extensions": [
-                ".ily",
-                ".ly"
-            ],
+            "aliases": ["LilyPond", "lilypond"],
+            "extensions": [".ly",".ily"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "lilypond",
             "scopeName": "source.lilypond",
-            "path": "./syntaxes/lilypond.tmLanguage"
+            "path": "./syntaxes/lilypond.tmLanguage.json"
         }]
     }
 }

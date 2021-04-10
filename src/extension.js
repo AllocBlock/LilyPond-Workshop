@@ -5,14 +5,14 @@ const cp = require('child_process');
 
 exports.activate = function(context) {
 	// register commands
-	context.subscriptions.push(vscode.commands.registerCommand('extension.lilypond.compile', compileManual));
+	context.subscriptions.push(vscode.commands.registerCommand('extension.lilypond-workshop.compile', compileManual));
 	
 	// register events
 	vscode.workspace.onDidSaveTextDocument(compileAuto);
 };
 
 function compileAuto(){
-	if (vscode.workspace.getConfiguration('lilypond').get('compileOnSave'))
+	if (vscode.workspace.getConfiguration('lilypond-workshop').get('compileOnSave'))
 		compile(true);
 }
 
@@ -22,7 +22,7 @@ function compileManual(){
 
 function compile(auto){
 	// check compiler path
-	let compilerPath = vscode.workspace.getConfiguration('lilypond').get('compilerPath');
+	let compilerPath = vscode.workspace.getConfiguration('lilypond-workshop').get('compilerPath');
 	if (!fs.existsSync(compilerPath)){
 		vscode.window.showErrorMessage(`LilyPond compiler not found! Please set compiler path in setting.\n(${compilerPath})`);
 		return;
@@ -54,7 +54,6 @@ function compile(auto){
 		`"${compilerPath}" "${filePath}"`, 
 		{
 			cwd: fileFolder,
-			timeout: 5000,
 		},
 		(err, stdout, stderr) => {
 			if (err)
