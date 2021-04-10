@@ -1,7 +1,0 @@
-*.pyc
-*.cache
-.DS_Store
-LilyTests
-.vscode
-vsc-extension-quickstart.md
-syntax/lilypond.tmLanguage

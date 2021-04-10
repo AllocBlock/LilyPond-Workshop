@@ -8,9 +8,36 @@
         "vscode": "^1.14.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
+    "activationEvents":[
+        "onLanguage:lilypond"
+    ],
+    "main": "./src/extension",
     "contributes": {
+        "configuration": {
+            "id": "lilypond",
+			"type": "object",
+			"title": "LilyPond Settings",
+			"properties": {
+				"lilypond.compilerPath": {
+					"type": "string",
+					"default": "C:/Program Files/LilyPond/usr/bin/lilypond.exe",
+					"description": "Path of LilyPond compiler (lilypond.exe)"
+				},
+                "lilypond.compileOnSave": {
+					"type": "boolean",
+					"default": true,
+					"description": "Enable auto-compile on save"
+				}
+			}
+		},
+        "commands": [
+            {
+                "command": "extension.lilypond.compile",
+                "title": "LilyPond: Compile"
+            }
+        ],
         "languages": [{
             "id": "lilypond",
             "aliases": [
