@@ -1,6 +1,5 @@
 # lilypond-workshop README
-
-Provide LilyPond syntex highlighting and auto-compiling.
+Provide LilyPond syntex highlighting and auto-compiling for VSCode.
 
 This project is based on [VSLilyPond](https://github.com/TrudyFirestone/VSLilyPond), which use the grammar from [SubLilyPond](https://github.com/yrammos/SubLilyPond).
 
