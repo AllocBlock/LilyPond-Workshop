@@ -7,6 +7,8 @@ LilyPond syntax highlighting in VSCode.
 
 Based on [SubLilyPond](https://github.com/yrammos/SubLilyPond), this provides syntax highlighting for LilyPond in VSCode. It doesn't currently support embedded scheme code as SubLilyPond does.
 
+2021.4.10 Add compiler config and compile on save. You may meanwhile use a pdf viewer plugin to "save and view".
+
 ### Installing SubLilyPond
 
 #### From VSCode
